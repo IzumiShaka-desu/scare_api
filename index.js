@@ -1,9 +1,8 @@
 const express = require("express");
 const cors = require("cors");
 const auth = require("./router/auth");
-const vehicle = require("./router/vehicle");
-const rent = require("./router/rent");
-const message = require("./router/message");
+const transaction = require("./router/transaction");
+const mitra = require("./router/mitra");
 
 const app = express();
 console.log(process.env.DB_DATABASE);
@@ -20,9 +19,9 @@ app.get("/", (req, res) => {
 
 // app.post("/register", auth.register);
 app.use("/auth", auth);
-app.use("/vehicle", vehicle);
-app.use("/rent", rent);
-app.use("/message", message);
+app.use("/mitra", mitra);
+app.use("/transaction", transaction);
+// app.use("/message", message);
 // path for showing image
 app.use("/images", express.static(__dirname + "/uploads"));
 app.listen(3000, () => {

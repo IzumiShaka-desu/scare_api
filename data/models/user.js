@@ -25,6 +25,9 @@ const User = sequelize.define(
         name: {
             type: DataTypes.STRING,
         },
+        address: {
+            type: DataTypes.STRING,
+        },
         "profile-photo": {
             type: DataTypes.STRING,
             nullable: true,

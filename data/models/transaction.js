@@ -1,6 +1,6 @@
 const sequelize = require("../db/db");
 const { Sequelize, DataTypes, Model } = require('sequelize');
-
+// id_transaction	id_mitra	id_user	estimated_finish_date	service_type	status	delivery_fee	total_price	payment_method	payment_status	payment_proof
 const Transaction = sequelize.define(
     "Transaction",
     {
@@ -9,36 +9,42 @@ const Transaction = sequelize.define(
             primaryKey: true,
             autoIncrement: true,
         },
-        id_vehicle: {
+        id_mitra: {
             type: DataTypes.INTEGER,
         },
-        id_renter: {
+        id_user: {
             type: DataTypes.INTEGER,
         },
-        // id_owner: {
-        //     type: DataTypes.INTEGER,
-        // },
-        start_date: {
+        estimated_finish_date: {
             type: DataTypes.DATE,
         },
-        end_date: {
-            type: DataTypes.DATE,
-        },
-        total_price: {
-            type: DataTypes.INTEGER,
+        service_type: {
+            type: DataTypes.STRING,
         },
         status: {
             type: DataTypes.STRING,
         },
-        // payment_method: {
-        //     type: DataTypes.STRING,
-        // },
-        // payment_status: {
-        //     type: DataTypes.STRING,
-        // },
-        // payment_proof: {
-        //     type: DataTypes.STRING,
-        // },
+        delivery_fee: {
+            type: DataTypes.INTEGER,
+        },
+        total_price: {
+            type: DataTypes.INTEGER,
+        },
+        payment_method: {
+            type: DataTypes.STRING,
+        },
+        payment_status: {
+            type: DataTypes.STRING,
+        },
+        payment_proof: {
+            type: DataTypes.STRING,
+            allowNull: true,
+        },
+        notes: {
+            type: DataTypes.STRING,
+            allowNull: true,
+        },
+
     },
 );
 

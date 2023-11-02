@@ -1,27 +1,28 @@
 const sequelize = require("../db/db");
 const { Sequelize, DataTypes, Model } = require('sequelize');
 
-const Messages = sequelize.define(
-    "Messages",
+// id_items	item_name	price	service_type(enum('Deepwash', 'Repaint', 'Sol', 'Unyellowing'))	createdAt	updatedAt
+const ServiceItem = sequelize.define(
+    "service_item",
     {
-        id_message: {
+        id_items: {
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true,
         },
-        id_room: {
+        id_mitra: {
             type: DataTypes.INTEGER,
         },
-        id_sender: {
-            type: DataTypes.INTEGER,
-        },
-        message: {
+        service_name: {
             type: DataTypes.STRING,
         },
-        sent_at: {
-            type: DataTypes.DATE,
+        price: {
+            type: DataTypes.INTEGER,
+        },
+        service_type: {
+            type: DataTypes.STRING,
         },
     },
 );
 
-module.exports = Messages;
+module.exports = ServiceItem;
